@@ -1,7 +1,8 @@
-import {useEffect, useMemo} from 'react';
+import {useMemo, useState} from 'react';
 import {useUsersStore} from './store';
 import {usersApi} from './api';
-import { UserLocal } from './types';
+import {UserLocal} from './types';
+import {Alert} from 'react-native';
 
 const useUsersDataProcess = () => {
   const {
@@ -11,6 +12,8 @@ const useUsersDataProcess = () => {
     setUsers,
     users,
   } = useUsersStore();
+
+  const [uploading, setUploading] = useState(false);
 
   const _users: UserLocal[] = useMemo(
     () =>
@@ -22,7 +25,14 @@ const useUsersDataProcess = () => {
   );
 
   const updateUsers = () => {
-    usersApi.getUsersAll().then(setUsers);
+    setUploading(true);
+    usersApi
+      .getUsersAll()
+      .then(setUsers)
+      .catch(err => {
+        Alert.alert('Error', `Error with status code ${err.response.status}`);
+      })
+      .finally(() => setUploading(false));
   };
 
   return {
@@ -30,6 +40,7 @@ const useUsersDataProcess = () => {
     updateUsers,
     addFavorite: addUserToFavorites,
     delFavorite: delUserFromFavorites,
+    uploading,
   };
 };
 

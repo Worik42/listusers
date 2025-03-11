@@ -1,9 +1,10 @@
 import React, {FC} from 'react';
-import {StyledCard} from '../../../common/ui/StyledCard';
 import {Text} from 'react-native-gesture-handler';
 import {StyleSheet, View} from 'react-native';
-import {FavoriteIcon} from '../../../common/ui/icons/FavoriteIcon';
-import { baseStyles } from '../../../common/ui/styles/baseStyles';
+import { StyledCard } from '@common/ui/components';
+import { baseStyles } from '@common/ui/styles/baseStyles';
+import { FavoriteIcon } from '@common/ui/icons';
+
 
 type TProps = {
   fullName: string;

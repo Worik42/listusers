@@ -2,12 +2,12 @@ import {createStackNavigator} from '@react-navigation/stack';
 import React, {FC} from 'react';
 import {baseScreenOptions} from './screenOptions';
 import {ROUTES} from './routes';
-import {UsersScreen} from '../../../features/users/screens/UsersScreen';
-import { UserScreen } from '../../../features/users/screens/UserScreen';
+import { UserDetailScreen } from '@features/users/screens/UserDetailScreen';
+import { UsersScreen } from '@features/users/screens/UsersScreen';
 
 export type RootStackParamsList = {
   [ROUTES.UsersScreen]: undefined;
-  [ROUTES.UserScreen]: {
+  [ROUTES.UserDetailScreen]: {
     userId: number
   };
 };
@@ -19,7 +19,7 @@ const RootStack: FC = () => {
     <>
       <Stack.Navigator screenOptions={baseScreenOptions}>
         <Stack.Screen name={ROUTES.UsersScreen} component={UsersScreen} />
-        <Stack.Screen name={ROUTES.UserScreen} component={UserScreen} />
+        <Stack.Screen name={ROUTES.UserDetailScreen} component={UserDetailScreen} />
       </Stack.Navigator>
     </>
   );

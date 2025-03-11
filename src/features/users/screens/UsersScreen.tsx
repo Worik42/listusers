@@ -1,15 +1,15 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React, {FC, useEffect, useMemo, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {RootStackParamsList} from '../../../common/core/Navigation/RootStack';
+import {RefreshControl, StyleSheet, View} from 'react-native';
 import {useUsersDataProcess} from '../hooks';
-import {StyledScreen} from '../../../common/ui/StyledScreen';
 import {FlatList} from 'react-native-gesture-handler';
+import {RootStackParamsList} from '@common/core/navigation/RootStack';
+import {ROUTES} from '@common/core/navigation/routes';
+import {StyledScreen} from '@common/ui/components/StyledScreen';
+import {SearchInput} from '../components/SearchInput';
 import {UserCard} from '../components/UserCard';
 import {UserLocal} from '../types';
-import {spacings} from '../../../common/ui/styles/spacings';
-import {SearchInput} from '../components/SearchInput';
-import { ROUTES } from '../../../common/core/Navigation/routes';
+import {spacings} from '@common/ui/styles';
 
 type TProps = NativeStackScreenProps<RootStackParamsList, ROUTES.UsersScreen>;
 
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 });
 
 const UsersScreen: FC<TProps> = ({navigation}) => {
-  const {updateUsers, users} = useUsersDataProcess();
+  const {updateUsers, users, uploading} = useUsersDataProcess();
 
   const [searchText, setSearchText] = useState<string>('');
 
@@ -36,7 +36,7 @@ const UsersScreen: FC<TProps> = ({navigation}) => {
   }, [users, searchText]);
 
   const navigateToDetail = (id: number) => {
-    // navigation.push(ROUTES.UserScreen, {userId: id});
+    navigation.push(ROUTES.UserDetailScreen, {userId: id});
   };
 
   const renderUserCard = ({item}: {item: UserLocal}) => (
@@ -66,6 +66,13 @@ const UsersScreen: FC<TProps> = ({navigation}) => {
         keyExtractor={keyExtractor}
         contentContainerStyle={styles.containerList}
         showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            enabled
+            refreshing={uploading}
+            onRefresh={updateUsers}
+          />
+        }
         data={_users}
         renderItem={renderUserCard}
       />

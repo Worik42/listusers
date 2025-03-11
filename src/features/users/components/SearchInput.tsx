@@ -1,6 +1,6 @@
+import { spacings } from '@common/ui/styles';
 import React, {FC} from 'react';
 import {StyleSheet, TextInput} from 'react-native';
-import {spacings} from '../../../common/ui/styles/spacings';
 
 type TProps = {
   text?: string;

@@ -1,6 +1,6 @@
 import React, {FC, PropsWithChildren} from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
-import {baseStyles} from './styles/baseStyles';
+import {baseStyles} from '../styles/baseStyles';
 
 type TProps = {
   backgroundColor?: string;

@@ -2,10 +2,10 @@ import React from 'react';
 import type {StyleProp, ViewStyle} from 'react-native';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 
-import {useDebounceFunc} from '../hooks/useDebounce';
-import {hapticsFeedback} from '../utils/haptic';
-import {baseStyles} from './styles/baseStyles';
-import { spacings } from './styles/spacings';
+import {baseStyles} from '../styles/baseStyles';
+import { spacings } from '../styles/spacings';
+import { useDebounceFunc } from '@common/hooks/useDebounce';
+import { hapticsFeedback } from '@common/utils/haptic';
 
 const styles = StyleSheet.create({
   container: {

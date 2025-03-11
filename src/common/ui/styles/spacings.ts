@@ -1,8 +1,8 @@
-const unit = 4
+const unit = 4;
 
-type Spacings = typeof spacings
+type Spacings = typeof spacings;
 
-export type KeySpacings = keyof Spacings
+export type KeySpacings = keyof Spacings;
 
 const spacings = {
   '2': unit / 2,
@@ -14,6 +14,6 @@ const spacings = {
   '20': unit * 5,
   '24': unit * 6,
   '32': unit * 8,
-}
+};
 
-export { spacings }
+export {spacings};
