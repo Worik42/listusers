@@ -9,7 +9,7 @@ import {StyledScreen} from '@common/ui/components/StyledScreen';
 import {SearchInput} from '../components/SearchInput';
 import {UserCard} from '../components/UserCard';
 import {UserLocal} from '../types';
-import {spacings} from '@common/ui/styles';
+import {colors, spacings} from '@common/ui/styles';
 
 type TProps = NativeStackScreenProps<RootStackParamsList, ROUTES.UsersScreen>;
 
@@ -58,7 +58,7 @@ const UsersScreen: FC<TProps> = ({navigation}) => {
   }, []);
 
   return (
-    <StyledScreen backgroundColor="#e0e1dd">
+    <StyledScreen backgroundColor={colors.background}>
       <View style={styles.containerInput}>
         <SearchInput text={searchText} setText={setSearchText} />
       </View>

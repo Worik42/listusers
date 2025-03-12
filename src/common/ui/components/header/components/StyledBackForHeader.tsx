@@ -3,7 +3,7 @@ import type {ViewStyle, StyleProp} from 'react-native';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 import {useDebounceFunc} from '@common/hooks/useDebounce';
-import {spacings} from '../../../styles';
+import {colors, spacings} from '../../../styles';
 import {hitSlop} from '@common/utils';
 import {BackArrowIcon} from '../../../icons/BackArrowIcon';
 
@@ -36,7 +36,7 @@ const StyledBackForHeader: React.FC<IProps> = ({onPress, style}) => {
       style={[styles.btnWrapper, style]}
       onPress={onPressFunc}>
       <View>
-        <BackArrowIcon color={'#2B303B'} />
+        <BackArrowIcon color={colors.arrow} />
       </View>
     </TouchableOpacity>
   );

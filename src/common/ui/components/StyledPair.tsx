@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {spacings} from '../styles';
+import {colors, spacings} from '../styles';
 
 type TProps = {
   title: string;
@@ -15,11 +15,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: spacings[12],
-    color: '#6c757d',
+    color: colors.subtitle,
   },
   value: {
     fontSize: spacings[16],
-    color: '#212529',
+    color: colors.title,
     fontWeight: '500',
   },
 });

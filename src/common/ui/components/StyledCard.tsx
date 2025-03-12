@@ -6,13 +6,14 @@ import {baseStyles} from '../styles/baseStyles';
 import { spacings } from '../styles/spacings';
 import { useDebounceFunc } from '@common/hooks/useDebounce';
 import { hapticsFeedback } from '@common/utils/haptic';
+import { colors } from '../styles';
 
 const styles = StyleSheet.create({
   container: {
     marginVertical: spacings[8],
     borderRadius: spacings[16],
     padding: spacings[16],
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.static_white,
   },
 });
 

@@ -7,7 +7,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {baseStyles, spacings} from '../styles';
+import {baseStyles, colors, spacings} from '../styles';
 
 type TProps = {
   onPress?: () => void;
@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     marginVertical: spacings[8],
     borderRadius: spacings[16],
     padding: spacings[16],
-    backgroundColor: '#ffffff',
+    backgroundColor: colors.static_white,
     marginHorizontal: spacings[16],
   },
   text: {
     fontSize: spacings[16],
     marginLeft: spacings[12],
-    color: '#212529',
+    color: colors.title,
   },
   containerContent: {
     display: 'flex',

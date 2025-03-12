@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "ainstall:withoutPods": "npm i -verbose",
+    "ainstall": "npm run ainstall:withoutPods && cd ios && pod install",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "lint": "eslint .",
+    "lint": "eslint './src/**/*.{ts,tsx}' --fix --quiet",
+    "prettier": "prettier \"./src/**/*.+(js|jsx|ts|tsx)\"",
     "start": "react-native start",
     "test": "jest"
   },

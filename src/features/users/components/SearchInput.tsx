@@ -1,4 +1,4 @@
-import { spacings } from '@common/ui/styles';
+import { colors, spacings } from '@common/ui/styles';
 import React, {FC} from 'react';
 import {StyleSheet, TextInput} from 'react-native';
 
@@ -10,9 +10,11 @@ type TProps = {
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: spacings[16],
-    // borderWidth: spacings[2],
     borderRadius: spacings[12],
-    backgroundColor: '#778da9',
+    backgroundColor: colors.gray_light,
+    height: 45,
+    paddingHorizontal: spacings[4],
+    color: colors.static_white,
   },
 });
 
@@ -22,6 +24,7 @@ const SearchInput: FC<TProps> = ({setText, text}) => {
       style={styles.container}
       placeholder="Search..."
       value={text}
+      placeholderTextColor={colors.static_white}
       onChangeText={setText}
     />
   );

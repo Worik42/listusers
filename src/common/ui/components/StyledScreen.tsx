@@ -1,6 +1,7 @@
 import React, {FC, PropsWithChildren} from 'react';
 import {StyleProp, View, ViewStyle} from 'react-native';
 import {baseStyles} from '../styles/baseStyles';
+import { colors } from '../styles';
 
 type TProps = {
   backgroundColor?: string;
@@ -12,7 +13,7 @@ const StyledScreen: FC<PropsWithChildren<TProps>> = ({
   backgroundColor,
   style,
 }) => {
-  const screenBackgroundColor = backgroundColor || '#ffffff';
+  const screenBackgroundColor = backgroundColor || colors.static_white;
 
   const containerStyle = React.useMemo(() => {
     return [baseStyles.f1, {backgroundColor: screenBackgroundColor}, style];

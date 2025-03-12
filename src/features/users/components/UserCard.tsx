@@ -4,6 +4,7 @@ import {StyleSheet, View} from 'react-native';
 import { StyledCard } from '@common/ui/components';
 import { baseStyles } from '@common/ui/styles/baseStyles';
 import { FavoriteIcon } from '@common/ui/icons';
+import { colors } from '@common/ui/styles';
 
 
 type TProps = {
@@ -34,7 +35,7 @@ const UserCard: FC<TProps> = ({city, email, fullName, isFavorite, onPress}) => {
         <Text>{city}</Text>
       </View>
       <View style={styles.containerIcon}>
-        <FavoriteIcon color={isFavorite ? '#ef0e0e' : '#000'} />
+        <FavoriteIcon color={isFavorite ? colors.red : colors.static_black} />
       </View>
     </StyledCard>
   );

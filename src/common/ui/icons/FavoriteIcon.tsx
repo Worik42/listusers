@@ -1,8 +1,9 @@
 import * as React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import {TIconPropsBase} from './types';
+import { colors } from '../styles';
 
-const FavoriteIcon: React.FC<TIconPropsBase> = ({color = '#000000', size = 24}) => (
+const FavoriteIcon: React.FC<TIconPropsBase> = ({color = colors.static_black, size = 24}) => (
   <Svg fill="none" viewBox="0 0 24 24" height={size} width={size}>
     <Path
       fill={color}

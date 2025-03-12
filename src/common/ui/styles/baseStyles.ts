@@ -1,12 +1,13 @@
 import {StyleSheet} from 'react-native';
-import { IS_IOS } from '../../utils/platformUtils';
+import {IS_IOS} from '../../utils/platformUtils';
+import {colors} from './colors';
 
 const baseStyles = StyleSheet.create({
   f1: {
     flex: 1,
   },
   withShadow: {
-    shadowColor: IS_IOS ? '#4A5568' : '#b1bac9',
+    shadowColor: IS_IOS ? colors.shadow_ios : colors.shadow_android,
     elevation: 2,
     shadowOffset: {
       width: 1,
@@ -15,6 +16,9 @@ const baseStyles = StyleSheet.create({
     shadowOpacity: 0.12,
     shadowRadius: 8,
   },
+  background: {
+    backgroundColor: colors.background
+  }
 });
 
 export {baseStyles};

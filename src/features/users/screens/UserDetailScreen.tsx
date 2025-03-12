@@ -7,7 +7,7 @@ import {StyledHeader} from '@common/ui/components/header/StyledHeader';
 import {useUsersDataProcess} from '../hooks';
 import {StyleSheet, View} from 'react-native';
 import {StyledPair} from '@common/ui/components/StyledPair';
-import {spacings} from '@common/ui/styles';
+import {colors, spacings} from '@common/ui/styles';
 import {StyledButton} from '@common/ui/components/StyledButton';
 import {FavoriteIcon} from '@common/ui/icons';
 
@@ -36,7 +36,7 @@ const UserDetailScreen: FC<TProps> = ({navigation, route}) => {
   };
 
   return (
-    <StyledScreen backgroundColor="#e0e1dd">
+    <StyledScreen backgroundColor={colors.background}>
       <StyledHeader
         title={user?.name}
         onBackPress={() => navigation.goBack()}
@@ -51,7 +51,7 @@ const UserDetailScreen: FC<TProps> = ({navigation, route}) => {
           <StyledButton
             text={user.isFavorite ? 'Added to favorites' : 'Add to favorites'}
             onPress={onPressFavorite}
-            icon={<FavoriteIcon color={user.isFavorite ? '#ef0e0e' : '#000'} />}
+            icon={<FavoriteIcon color={user.isFavorite ? colors.red : colors.static_black} />}
           />
         </>
       ) : null}
