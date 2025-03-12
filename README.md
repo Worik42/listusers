@@ -1,6 +1,8 @@
 # About app
 
-all question about app to [@Worik42](https://t.me/Worik42)
+All question about app to [@Worik42](https://t.me/Worik42)
+
+Time spent on the project 8 hours 47 minutes.
 
 ## Features
 
